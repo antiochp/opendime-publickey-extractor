@@ -8,7 +8,7 @@ from bitcoin.core.key import CPubKey
 from bitcoin.signmessage import BitcoinMessage
 
 # TODO - read this file from a mounted OpenDime
-with open('./variables_3.json') as data_file:
+with open('/Volumes/OPENDIME/advanced/variables.json') as data_file:
     data = json.load(data_file)
 
 pprint(data)
@@ -31,5 +31,11 @@ pubkey = CPubKey.recover_compact(hash, sig)
 pprint(pubkey)
 hex_bytes = binascii.hexlify(pubkey)
 pprint(hex_bytes)
+
+print('\n\n')
+print('Address:')
+print(data['ad'])
+
+print('Pubkey:')
 hex_str = hex_bytes.decode("ascii")
-pprint(hex_str)
+print(hex_str)
